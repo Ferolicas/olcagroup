@@ -69,7 +69,7 @@ const projects = [
 
 export function Portfolio() {
   return (
-    <section id="portafolio" className="py-20 md:py-32 bg-white">
+    <section id="portafolio" className="py-20 md:py-32 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -78,11 +78,11 @@ export function Portfolio() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-blue-600 text-sm uppercase tracking-wider">Portafolio</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4">
-            Proyectos <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Reales</span> y Resultados
+          <span className="text-blue-400 text-sm uppercase tracking-widest font-medium">Portafolio</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4 text-white">
+            Proyectos <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Reales</span> y Resultados
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto">
             Casos de éxito comprobados que demuestran nuestra experiencia
           </p>
         </motion.div>
@@ -91,7 +91,7 @@ export function Portfolio() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
+              className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/[0.08] transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -106,16 +106,16 @@ export function Portfolio() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 rounded-full text-sm font-medium">
+                  <span className="px-3 py-1 bg-blue-500/90 backdrop-blur-sm text-white rounded-full text-sm font-medium">
                     {project.category}
                   </span>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 right-4 flex gap-3">
-                    <span className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-200 cursor-pointer">
+                    <span className="p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-colors duration-200 cursor-pointer">
                       <ExternalLink size={20} />
                     </span>
-                    <span className="p-3 bg-white rounded-full hover:bg-blue-600 hover:text-white transition-colors duration-200 cursor-pointer">
+                    <span className="p-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white hover:bg-white/20 transition-colors duration-200 cursor-pointer">
                       <Github size={20} />
                     </span>
                   </div>
@@ -123,15 +123,15 @@ export function Portfolio() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-white">{project.title}</h3>
+                <p className="text-gray-200 mb-4">{project.description}</p>
 
                 <div className="mb-4">
-                  <p className="text-sm font-semibold text-gray-700 mb-2">Características:</p>
+                  <p className="text-sm font-semibold text-gray-300 mb-2">Características:</p>
                   <ul className="space-y-1">
                     {project.features.map((feature, i) => (
-                      <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
-                        <span className="text-blue-600 mt-0.5">•</span>
+                      <li key={i} className="text-sm text-gray-200 flex items-start gap-2">
+                        <span className="text-blue-400 mt-0.5">•</span>
                         {feature}
                       </li>
                     ))}
@@ -139,12 +139,12 @@ export function Portfolio() {
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-sm font-semibold text-gray-700 mb-2">Resultados:</p>
+                  <p className="text-sm font-semibold text-gray-300 mb-2">Resultados:</p>
                   <div className="flex flex-wrap gap-2">
                     {project.results.map((result, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs"
+                        className="px-3 py-1 bg-green-500/10 border border-green-500/20 text-green-400 rounded-full text-xs"
                       >
                         ✓ {result}
                       </span>
@@ -152,11 +152,11 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm"
+                      className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-sm"
                     >
                       {tag}
                     </span>

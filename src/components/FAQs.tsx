@@ -43,7 +43,7 @@ export function FAQs() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faqs" className="py-20 md:py-32 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="faqs" className="py-20 md:py-32 bg-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -52,11 +52,11 @@ export function FAQs() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-blue-600 text-sm uppercase tracking-wider">Preguntas Frecuentes</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4">
-            Resolvemos tus <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Dudas</span>
+          <span className="text-blue-400 text-sm uppercase tracking-widest font-medium">Preguntas Frecuentes</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4 text-white">
+            Resolvemos tus <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Dudas</span>
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-200 text-lg">
             Encuentra respuestas a las preguntas más comunes
           </p>
         </motion.div>
@@ -65,7 +65,7 @@ export function FAQs() {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -73,11 +73,11 @@ export function FAQs() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex justify-between items-center hover:bg-blue-50 transition-colors"
+                className="w-full px-6 py-5 flex justify-between items-center hover:bg-white/5 transition-colors"
               >
-                <span className="font-semibold text-left text-gray-900">{faq.question}</span>
+                <span className="font-semibold text-left text-white">{faq.question}</span>
                 <ChevronDown
-                  className={`flex-shrink-0 ml-4 text-blue-600 transition-transform duration-300 ${
+                  className={`flex-shrink-0 ml-4 text-blue-400 transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                   size={20}
@@ -93,7 +93,7 @@ export function FAQs() {
                     className="overflow-hidden"
                   >
                     <div className="px-6 pb-5">
-                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                      <p className="text-gray-200 leading-relaxed">{faq.answer}</p>
                     </div>
                   </motion.div>
                 )}
@@ -109,10 +109,10 @@ export function FAQs() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-gray-600 mb-4">¿No encuentras la respuesta que buscas?</p>
+          <p className="text-gray-200 mb-4">¿No encuentras la respuesta que buscas?</p>
           <a
             href="#contacto"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
           >
             Contáctanos Ahora
           </a>

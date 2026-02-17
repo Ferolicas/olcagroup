@@ -6,11 +6,11 @@ import Image from 'next/image';
 
 export function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full filter blur-[120px] opacity-20"
           animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
@@ -22,7 +22,7 @@ export function Hero() {
           }}
         />
         <motion.div
-          className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500 rounded-full filter blur-[120px] opacity-20"
           animate={{
             x: [0, -100, 0],
             y: [0, 100, 0],
@@ -51,7 +51,7 @@ export function Hero() {
                 alt="OLCAGROUP"
                 width={192}
                 height={192}
-                className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white shadow-2xl"
+                className="relative w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/20 shadow-2xl"
                 priority
               />
             </div>
@@ -62,26 +62,26 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm mb-6">
+            <span className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-full text-sm mb-6">
               Innovando en Desarrollo Web desde 2015
             </span>
           </motion.div>
 
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Transformamos Ideas en
             <br />
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Experiencias Digitales de Alto Impacto
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl text-gray-200 mb-8 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -97,20 +97,20 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
               <div className="text-3xl mb-2">⚡</div>
-              <h3 className="font-semibold mb-2">Entrega Garantizada</h3>
-              <p className="text-sm text-gray-600">Proyectos terminados en tiempo récord sin comprometer calidad</p>
+              <h3 className="font-semibold mb-2 text-white">Entrega Garantizada</h3>
+              <p className="text-sm text-gray-200">Proyectos terminados en tiempo récord sin comprometer calidad</p>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
               <div className="text-3xl mb-2">💰</div>
-              <h3 className="font-semibold mb-2">40% Más Económico</h3>
-              <p className="text-sm text-gray-600">Precio justo sin sacrificar excelencia profesional</p>
+              <h3 className="font-semibold mb-2 text-white">40% Más Económico</h3>
+              <p className="text-sm text-gray-200">Precio justo sin sacrificar excelencia profesional</p>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
               <div className="text-3xl mb-2">🤝</div>
-              <h3 className="font-semibold mb-2">Soporte Real</h3>
-              <p className="text-sm text-gray-600">Acompañamiento continuo post-lanzamiento incluido</p>
+              <h3 className="font-semibold mb-2 text-white">Soporte Real</h3>
+              <p className="text-sm text-gray-200">Acompañamiento continuo post-lanzamiento incluido</p>
             </div>
           </motion.div>
 
@@ -122,14 +122,14 @@ export function Hero() {
           >
             <a
               href="#contacto"
-              className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2"
+              className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-2"
             >
               Solicita tu Cotización Gratuita
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </a>
             <a
               href="#portafolio"
-              className="px-8 py-4 bg-white text-gray-700 rounded-full border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
+              className="px-8 py-4 text-white rounded-full border-2 border-white/20 hover:border-blue-500 hover:text-blue-400 transition-all duration-300"
             >
               Ver Nuestro Portafolio
             </a>
@@ -145,23 +145,23 @@ export function Hero() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+              className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:scale-110 transition-all duration-300"
             >
-              <Github size={24} className="text-gray-700" />
+              <Github size={24} className="text-gray-300" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+              className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:scale-110 transition-all duration-300"
             >
-              <Linkedin size={24} className="text-gray-700" />
+              <Linkedin size={24} className="text-gray-300" />
             </a>
             <a
               href="mailto:contacto@olcagroup.com"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+              className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 hover:scale-110 transition-all duration-300"
             >
-              <Mail size={24} className="text-gray-700" />
+              <Mail size={24} className="text-gray-300" />
             </a>
           </motion.div>
         </div>
@@ -173,8 +173,8 @@ export function Hero() {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-gray-400 rounded-full mt-2" />
+        <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-gray-500 rounded-full mt-2" />
         </div>
       </motion.div>
     </section>

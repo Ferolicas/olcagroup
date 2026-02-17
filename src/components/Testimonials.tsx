@@ -30,8 +30,12 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonios" className="py-20 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonios" className="py-20 md:py-32 bg-gradient-to-br from-gray-950 via-blue-950 to-gray-900 relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -39,11 +43,11 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-blue-600 text-sm uppercase tracking-wider">Testimonios</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4">
-            Lo Que Dicen Nuestros <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Clientes</span>
+          <span className="text-blue-400 text-sm uppercase tracking-widest font-medium">Testimonios</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-4 text-white">
+            Lo Que Dicen Nuestros <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Clientes</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-200 text-lg max-w-2xl mx-auto">
             Feedback real de clientes satisfechos que han transformado sus negocios
           </p>
         </motion.div>
@@ -52,13 +56,13 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 relative"
+              className="bg-white/5 border border-white/10 rounded-2xl p-8 relative"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Quote className="absolute top-6 right-6 text-blue-200" size={48} />
+              <Quote className="absolute top-6 right-6 text-blue-500/20" size={48} />
 
               <div className="relative z-10">
                 <div className="flex gap-1 mb-4">
@@ -67,7 +71,7 @@ export function Testimonials() {
                   ))}
                 </div>
 
-                <p className="text-gray-700 mb-6 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
+                <p className="text-gray-300 mb-6 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
 
                 <div className="flex items-center gap-4">
                   <Image
@@ -75,11 +79,11 @@ export function Testimonials() {
                     alt={testimonial.name}
                     width={48}
                     height={48}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
                   />
                   <div>
-                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    <p className="font-semibold text-white">{testimonial.name}</p>
+                    <p className="text-sm text-gray-200">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
