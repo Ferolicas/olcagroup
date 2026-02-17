@@ -44,7 +44,7 @@ export function Navigation({ selectedCountry, onCountryChange }: NavigationProps
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white/80 backdrop-blur-md'
+        isScrolled ? 'bg-gray-950/95 backdrop-blur-lg shadow-lg shadow-black/20' : 'bg-gray-950/80 backdrop-blur-md'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ export function Navigation({ selectedCountry, onCountryChange }: NavigationProps
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Image src="/logo.png" alt="OLCAGROUP" width={140} height={40} className="h-8 md:h-10 w-auto" priority />
+            <Image src="/logo.png" alt="OLCAGROUP" width={500} height={140} className="h-32 md:h-40 w-auto" priority />
           </motion.a>
 
           {/* Desktop Menu */}
@@ -67,7 +67,7 @@ export function Navigation({ selectedCountry, onCountryChange }: NavigationProps
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -83,7 +83,7 @@ export function Navigation({ selectedCountry, onCountryChange }: NavigationProps
             <CountrySelector selectedCountry={selectedCountry} onCountryChange={onCountryChange} />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-lg text-gray-300 hover:bg-white/10 transition-colors"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -98,7 +98,7 @@ export function Navigation({ selectedCountry, onCountryChange }: NavigationProps
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-gray-950 border-t border-white/10"
           >
             <div className="px-4 py-4 space-y-3">
               {navLinks.map((link) => (
@@ -106,7 +106,7 @@ export function Navigation({ selectedCountry, onCountryChange }: NavigationProps
                   key={link.href}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="block py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                  className="block py-2 text-gray-300 hover:text-blue-400 transition-colors"
                 >
                   {link.label}
                 </a>

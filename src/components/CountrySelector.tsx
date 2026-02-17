@@ -32,7 +32,7 @@ export function CountrySelector({ selectedCountry, onCountryChange }: CountrySel
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200 hover:border-blue-600 transition-colors"
+        className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:border-blue-500 transition-colors"
       >
         <Globe size={18} />
         <span className="text-xl">{countries[selectedCountry].flag}</span>
@@ -53,7 +53,7 @@ export function CountrySelector({ selectedCountry, onCountryChange }: CountrySel
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-20">
+          <div className="absolute right-0 mt-2 w-48 bg-gray-900 border border-white/10 rounded-lg shadow-xl z-20">
             {Object.values(countries).map((country) => (
               <button
                 key={country.code}
@@ -61,8 +61,8 @@ export function CountrySelector({ selectedCountry, onCountryChange }: CountrySel
                   onCountryChange(country.code);
                   setIsOpen(false);
                 }}
-                className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors ${
-                  selectedCountry === country.code ? 'bg-blue-50 text-blue-600' : ''
+                className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors ${
+                  selectedCountry === country.code ? 'bg-blue-500/10 text-blue-400' : 'text-gray-300'
                 }`}
               >
                 <span className="text-xl">{country.flag}</span>
