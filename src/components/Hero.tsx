@@ -47,7 +47,7 @@ export function Hero() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur-2xl opacity-40 animate-pulse" />
               <Image
-                src="/logo.svg"
+                src="/img.jpg"
                 alt="OLCAGROUP"
                 width={192}
                 height={192}

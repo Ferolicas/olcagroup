@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { CountrySelector, Country } from './CountrySelector';
 
 interface NavigationProps {
@@ -51,12 +52,12 @@ export function Navigation({ selectedCountry, onCountryChange }: NavigationProps
           <motion.a
             href="#inicio"
             onClick={(e) => scrollToSection(e, '#inicio')}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="flex items-center"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            OLCAGROUP
+            <Image src="/logo.png" alt="OLCAGROUP" width={140} height={40} className="h-8 md:h-10 w-auto" priority />
           </motion.a>
 
           {/* Desktop Menu */}

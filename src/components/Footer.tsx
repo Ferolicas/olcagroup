@@ -1,4 +1,5 @@
 import { Heart, Github, Linkedin, Twitter, Mail, FileText } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -7,9 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              OLCAGROUP
-            </h3>
+            <Image src="/logo.png" alt="OLCAGROUP" width={160} height={45} className="h-10 w-auto mb-4" />
             <p className="text-gray-400 mb-4">
               Transformando ideas en experiencias digitales desde 2015. Desarrollo web profesional con
               tecnologías de vanguardia en España y Latinoamérica.
